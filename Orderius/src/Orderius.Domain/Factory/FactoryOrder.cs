@@ -1,4 +1,4 @@
-﻿namespace Orderius.Domain;
+﻿namespace Orderius.Domain.Factory;
 
 public class FactoryOrder : IFactory
 {

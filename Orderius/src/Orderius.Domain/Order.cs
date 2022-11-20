@@ -1,3 +1,5 @@
+using Orderius.Domain.Factory;
+
 namespace Orderius.Domain;
 
 public class Order : IProduct
