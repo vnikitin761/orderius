@@ -7,14 +7,17 @@ public class OrderItem : IProduct
     public string Name { get; set; }
     public int Quantity { get; set; }
     public TypeUnit Unit { get; set; }
+    
+    public Order Order { get; private set; }
 
-    internal OrderItem(int orderId, int id, string name, int quantity, TypeUnit unit)
+    internal OrderItem(Order order,int id, string name, int quantity, TypeUnit unit)
     {
-        OrderId = orderId;
+        OrderId = order.Id;
         Id = id;
         Name = name;
         Quantity = quantity;
         Unit = unit;
+        Order = order;
     }
 }
 
