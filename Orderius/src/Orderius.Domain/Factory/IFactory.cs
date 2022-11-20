@@ -2,5 +2,5 @@
 
 public interface IFactory
 {
-    IProduct CreateProduct(DataTransfer dtObject);
+    IDomainModel CreateProduct(DataTransfer dtObject);
 }

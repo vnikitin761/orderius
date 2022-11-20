@@ -2,7 +2,7 @@ using Orderius.Domain.Factory;
 
 namespace Orderius.Domain;
 
-public class Provider : IProduct
+public class Provider : IDomainModel
 {
     public int Id { get; private set; }
     public string Name { get; private set; }

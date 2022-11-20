@@ -2,12 +2,12 @@ using Orderius.Domain.Factory;
 
 namespace Orderius.Domain;
 
-public class Order : IProduct
+public class Order : IDomainModel
 {
     public int Id { get; private set; }
     public string Number { get; set; }
     public DateTime Date { get; set; }
-    public int ProviderId { get; set; }
+    public int ProviderId => Provider.Id;
     
     public List<OrderItem> OrderItems { get; set; }
     
@@ -18,7 +18,6 @@ public class Order : IProduct
         Id = id;
         Number = number;
         Date = date;
-        ProviderId = provider.Id;
         Provider = provider;
     }
 }

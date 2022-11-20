@@ -2,7 +2,7 @@
 
 public class FactoryOrder : IFactory
 {
-    public IProduct CreateProduct(DataTransfer dtObject)
+    public IDomainModel CreateProduct(DataTransfer dtObject)
     {
         var provider = dtObject.GetProperty<Provider>();
         var number = dtObject.GetProperty<string>("Number");

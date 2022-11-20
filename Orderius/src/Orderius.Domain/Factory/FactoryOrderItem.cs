@@ -2,7 +2,7 @@
 
 public class FactoryOrderItem : IFactory
 {
-    public IProduct CreateProduct(DataTransfer dtObject)
+    public IDomainModel CreateProduct(DataTransfer dtObject)
     {
         var order = dtObject.GetProperty<Order>();
             var name = dtObject.GetProperty<string>("Name");

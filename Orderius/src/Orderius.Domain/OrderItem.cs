@@ -2,9 +2,9 @@ using Orderius.Domain.Factory;
 
 namespace Orderius.Domain;
 
-public class OrderItem : IProduct
+public class OrderItem : IDomainModel
 {
-    public int OrderId { get; private set; }
+    public int OrderId => Order.Id;
     public int Id { get; private set; }
     public string Name { get; set; }
     public int Quantity { get; set; }
@@ -14,7 +14,6 @@ public class OrderItem : IProduct
 
     internal OrderItem(Order order,int id, string name, int quantity, TypeUnit unit)
     {
-        OrderId = order.Id;
         Id = id;
         Name = name;
         Quantity = quantity;
