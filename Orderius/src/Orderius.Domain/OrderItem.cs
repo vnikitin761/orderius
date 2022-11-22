@@ -1,4 +1,5 @@
 using Orderius.Domain.Factory;
+using Orderius.Domain.Updater;
 
 namespace Orderius.Domain;
 
@@ -6,9 +7,9 @@ public class OrderItem : IDomainModel
 {
     public int OrderId => Order.Id;
     public int Id { get; private set; }
-    public string Name { get; set; }
-    public int Quantity { get; set; }
-    public TypeUnit Unit { get; set; }
+    public string Name { get; internal set; }
+    public int Quantity { get; internal set; }
+    public TypeUnit Unit { get; internal set; }
     
     public Order Order { get; private set; }
 
@@ -19,6 +20,11 @@ public class OrderItem : IDomainModel
         Quantity = quantity;
         Unit = unit;
         Order = order;
+    }
+    
+    public void Update(IUpdater updater,DataTransfer dtObject)
+    {
+        updater.UpdateModel(this,dtObject);
     }
 }
 
